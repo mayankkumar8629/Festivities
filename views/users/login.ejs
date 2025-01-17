@@ -1,0 +1,58 @@
+<%layout("/layouts/boilerplate")%>
+<div class="container-fluid d-flex" style="height: 100vh">
+  <!-- Left Half for Image -->
+  <div
+    class="col-md-6 p-0"
+    style="
+      background: url('/images/login.jpg') no-repeat center center;
+      background-size: cover;
+      margin-top: 20px; /* Adjust top margin as needed */
+      margin-bottom: 20px; /* Adjust bottom margin as needed */
+      padding-right: 30px; /* Add right padding */
+      margin-left: -70px; /* Shift the div slightly to the left */
+    "
+  ></div>
+
+  <!-- Right Half for Form -->
+  <div class="col-md-6 p-5">
+    <!-- Signup Button in Top-Right Corner -->
+    <button class="btn btn-primary position-absolute top-0 end-0 m-3">
+      Login
+    </button>
+
+    <!-- Form Container -->
+    <div class="login-container mt-5">
+        <div class="mt-8">
+            <p class="text-black fs-2 fw-normal font-family-Montserrat m-0 px-3 py-2">
+                YOUR GATEWAY TO CULTURE, CONNECTION &<br />CELEBRATION STARTS HERE!!
+              </p>
+        </div>
+          <div class="mt-7 ms-3">
+           
+            <form action="/signup" method="POST">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <button type="button" class="btn btn-outline-success">Login</button>
+            </form>
+          </div>
+    </div>
+  </div>
+</div>

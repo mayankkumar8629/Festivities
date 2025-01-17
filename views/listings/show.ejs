@@ -1,0 +1,31 @@
+<% layout("/layouts/boilerplate")%>
+
+<div class="background"></div>
+<div class="d-flex justify-content-center mt-4 my-showcard">
+  <div
+    class="card border-0 shadow"
+    style="width: 18rem; background: transparent; padding: 15px"
+  >
+    <img src="<%=listing.image%>" class="card-img-top" alt="..." />
+    <br />
+
+    <div class="show-card card-body text-center">
+      <h5 class="card-title text-white"><%=listing.title%></h5>
+      <p class="card-text text-white"><%=listing.description%></p>
+      <p class="text-white">
+        &#8377; ₹<%= listing.price ? listing.price.toLocaleString("en-IN") :
+        "N/A" %> /night
+      </p>
+
+      <p class="text-white">
+        <%=listing.venue.street%>,<%=listing.venue.city%>,<%=listing.venue.state%>
+      </p>
+      <p class="text-white">
+        <%= new Date(listing.dateAndTime).toLocaleString('en-US', { weekday:
+        'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit',
+        minute: '2-digit', timeZoneName: 'short' }) %>
+      </p>
+      <a href="#" class="btn btn-primary text-white">Book</a>
+    </div>
+  </div>
+</div>

@@ -1,230 +1,95 @@
-<% layout("/layouts/boilerplate")%>
-
-<div style="width: 100%; height: 100%; position: relative; background: white">
+<%layout("/layouts/boilerplate")%>
+<div class="container-fluid d-flex" style="height: 100vh">
+  <!-- Left Half for Image -->
   <div
+    class="col-md-6 p-0"
     style="
-      width: 123px;
-      height: 46px;
-      left: 1127px;
-      top: 30px;
-      position: absolute;
-      background: #d9d9d9;
-      border-radius: 21px;
+      background: url('/images/signup.jpg') no-repeat center center;
+      background-size: cover;
+      margin-top: 20px; /* Adjust top margin as needed */
+      margin-bottom: 20px; /* Adjust bottom margin as needed */
+      padding-right: 30px; /* Add right padding */
+      margin-left: -70px; /* Shift the div slightly to the left */
     "
   ></div>
-  <img
-    style="width: 630px; height: 832px; left: 0px; top: 0px; position: absolute"
-    src="../../images/nishant-jain-7gGfEquPZkQ-unsplash.jpg"
-  />
-  <div
-    style="
-      width: 391px;
-      height: 104px;
-      left: 746px;
-      top: 106px;
-      position: absolute;
-      color: black;
-      font-size: 36px;
-      font-family: Montserrat;
-      font-weight: 700;
-      letter-spacing: 3.6px;
-      word-wrap: break-word;
-    "
-  >
-    CREATE YOUR ACCOUNT
-  </div>
 
-  <div
-    style="
-      width: 400px;
-      height: 503px;
-      left: 753px;
-      top: 240px;
-      position: absolute;
-    "
-  >
-    <div
-      style="
-        width: 187px;
-        height: 46px;
-        left: 0px;
-        top: 27px;
-        position: absolute;
-        background: #d9d9d9;
-      "
-    ></div>
-    <div
-      style="
-        width: 394px;
-        height: 46px;
-        left: 0px;
-        top: 113px;
-        position: absolute;
-        background: #d9d9d9;
-      "
-    ></div>
-    <div
-      style="
-        width: 394px;
-        height: 46px;
-        left: 0px;
-        top: 285px;
-        position: absolute;
-        background: #d9d9d9;
-      "
-    ></div>
-    <div
-      style="
-        width: 394px;
-        height: 46px;
-        left: 0px;
-        top: 371px;
-        position: absolute;
-        background: #d9d9d9;
-      "
-    ></div>
-    <div
-      style="
-        width: 187px;
-        height: 46px;
-        left: 207px;
-        top: 27px;
-        position: absolute;
-        background: #d9d9d9;
-      "
-    ></div>
-    <div
-      style="
-        width: 394px;
-        height: 46px;
-        left: 0px;
-        top: 199px;
-        position: absolute;
-        background: #d9d9d9;
-      "
-    ></div>
-    <div
-      style="
-        width: 225px;
-        height: 46px;
-        left: 0px;
-        top: 457px;
-        position: absolute;
-        background: #d9d9d9;
-        border-radius: 21px;
-      "
-    ></div>
-    <div
-      style="
-        width: 192px;
-        height: 22px;
-        left: 23px;
-        top: 471px;
-        position: absolute;
-        color: black;
-        font-size: 15px;
-        font-family: Montserrat;
-        font-weight: 400;
-        word-wrap: break-word;
-      "
-    >
-      CREATE YOUR ACCOUNT
-    </div>
-    <div
-      style="
-        width: 192px;
-        height: 22px;
-        left: 0px;
-        top: 0px;
-        position: absolute;
-        color: black;
-        font-size: 15px;
-        font-family: Montserrat;
-        font-weight: 400;
-        word-wrap: break-word;
-      "
-    >
-      Name
-    </div>
-    <div
-      style="
-        width: 192px;
-        height: 22px;
-        left: 208px;
-        top: 0px;
-        position: absolute;
-        color: black;
-        font-size: 15px;
-        font-family: Montserrat;
-        font-weight: 400;
-        word-wrap: break-word;
-      "
-    >
-      State
-    </div>
-    <div
-      style="
-        width: 192px;
-        height: 22px;
-        left: 0px;
-        top: 82px;
-        position: absolute;
-        color: black;
-        font-size: 15px;
-        font-family: Montserrat;
-        font-weight: 400;
-        word-wrap: break-word;
-      "
-    >
-      Email
-    </div>
-    <div
-      style="
-        width: 192px;
-        height: 22px;
-        left: 0px;
-        top: 168px;
-        position: absolute;
-        color: black;
-        font-size: 15px;
-        font-family: Montserrat;
-        font-weight: 400;
-        word-wrap: break-word;
-      "
-    >
-      Contact Number
-    </div>
-    <div
-      style="
-        width: 192px;
-        height: 22px;
-        left: 4px;
-        top: 254px;
-        position: absolute;
-        color: black;
-        font-size: 15px;
-        font-family: Montserrat;
-        font-weight: 400;
-        word-wrap: break-word;
-      "
-    >
-      Username
-    </div>
-    <div
-      style="
-        width: 192px;
-        height: 22px;
-        left: 0px;
-        top: 340px;
-        position: absolute;
-        color: black;
-        font-size: 15px;
-        font-family: Montserrat;
-        font-weight: 400;
-        word-wrap: break-word;
-      "
-    >
-      Password
+  <!-- Right Half for Form -->
+  <div class="col-md-6 p-5">
+    <!-- Signup Button in Top-Right Corner -->
+    <button class="btn btn-primary position-absolute top-0 end-0 m-3">
+      Login
+    </button>
+
+    <!-- Form Container -->
+    <div class="mt-1 margin-left">
+      <h2 class="mb-4">Create New Account</h2>
+      <form action="/signup" method="POST">
+        <div class="form-row">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="state" class="form-label">State:</label>
+            <input
+              type="text"
+              id="state"
+              name="state"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="contact" class="form-label">Contact Number:</label>
+          <input
+            type="tel"
+            id="contact"
+            name="contact"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="button" class="btn btn-outline-success">
+          Create New Account
+        </button>
+      </form>
     </div>
   </div>
 </div>
