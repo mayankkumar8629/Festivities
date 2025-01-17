@@ -1,0 +1,92 @@
+<% layout("/layouts/boilerplate") %>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h3>Add your Event</h3>
+      <form method="POST" action="/listings">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            name="listing[title]"
+            ;
+            placeholder="enter title"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="listing[description]"
+            ;
+            placeholder="enter description"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Image Url</label>
+          <input
+            name="listing[image]"
+            ;
+            placeholder="enter image url"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="listing[price]"
+            ;
+            placeholder="enter price"
+            type="number"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="street" class="form-label">Street</label>
+          <input
+            name="listing[venue.street]"
+            ;
+            placeholder="enter street"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="form-row">
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input
+              name="listing[venue.city]"
+              ;
+              placeholder="enter city"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">State</label>
+            <input
+              name="listing[venue.state]"
+              ;
+              placeholder="enter state"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="eventDateTime" class="form-label">Date&Time</label>
+          <input
+            name="listing[dateAndTime]"
+            ;
+            placeholder="enter date&time "
+            type="datetime-local"
+            class="form-control"
+          />
+        </div>
+        <button class="btn btn-dark add-btn">Add</button>
+      </form>
+    </div>
+  </div>
+</div>

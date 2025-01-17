@@ -3,7 +3,7 @@ const eventData = [
     title: "Diwali Dhamaka Night",
     description:
       "Celebrate the festival of lights with music, dance, and delicious food.",
-    image: "https://images.pexels.com/photos/4171733/pexels-photo-4171733.jpeg",
+    image: "https://images.unsplash.com/photo-1508519829430-40f7d3d161b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGl3YWxpfGVufDB8fDB8fHww",
     price: 499,
     venue: {
       street: "45 Festive Lane",
@@ -16,7 +16,7 @@ const eventData = [
     title: "Pongal Celebration",
     description:
       "Experience traditional Pongal festivities with cultural activities and delicious treats.",
-    image: "https://images.unsplash.com/photo-1607092921503-5cf42f8c2cd9",
+    image: "https://images.unsplash.com/photo-1672839641769-b7a8afa0cb14?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBvbmdhbHxlbnwwfHwwfHx8MA%3D%3D",
     price: 299,
     venue: {
       street: "Temple Grounds",
@@ -29,7 +29,7 @@ const eventData = [
     title: "Onam Sadhya Feast",
     description:
       "Enjoy an authentic Onam Sadhya feast with over 25 traditional dishes.",
-    image: "https://images.pexels.com/photos/3727248/pexels-photo-3727248.jpeg",
+    image: "https://plus.unsplash.com/premium_photo-1667786643771-d43758a347d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b25hbXxlbnwwfHwwfHx8MA%3D%3D",
     price: 599,
     venue: {
       street: "Kerala Convention Center",
@@ -42,7 +42,7 @@ const eventData = [
     title: "Lohri Night",
     description:
       "Celebrate Lohri with bonfires, dance, and traditional Punjabi songs.",
-    image: "https://images.unsplash.com/photo-1610986602711-0c160cf474b3",
+    image: "https://images.unsplash.com/photo-1589754328566-f3c618d68387?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG9ocml8ZW58MHx8MHx8fDA%3D",
     price: 100,
     venue: {
       street: "Cultural Park",
@@ -55,7 +55,7 @@ const eventData = [
     title: "Durga Puja Pandals",
     description:
       "Visit beautifully decorated Durga Puja pandals and experience the festive spirit.",
-    image: "https://images.pexels.com/photos/287162/pexels-photo-287162.jpeg",
+    image: "https://images.unsplash.com/photo-1622279488885-d831e8e76cef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHVyZ2ElMjBwdWphfGVufDB8fDB8fHww",
     price: 0, // Free event
     venue: {
       street: "Pandals Grounds",
@@ -68,7 +68,7 @@ const eventData = [
     title: "Bihu Dance Festival",
     description:
       "Experience the vibrant traditional Bihu dance performed during Assam's new year celebrations.",
-    image: "https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6",
+    image: "https://images.unsplash.com/photo-1602020277883-8441715993df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmlodXxlbnwwfHwwfHx8MA%3D%3D",
     price: 150,
     venue: {
       street: "Assam Cultural Grounds",
@@ -81,7 +81,7 @@ const eventData = [
     title: "Navratri Garba Nights",
     description:
       "Join the grand Navratri Garba celebrations with traditional folk dance and music.",
-    image: "https://images.pexels.com/photos/3307301/pexels-photo-3307301.jpeg",
+    image: "https://images.unsplash.com/photo-1699637568981-4a79d177e025?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2FyYmF8ZW58MHx8MHx8fDA%3D",
     price: 200,
     venue: {
       street: "Garba Grounds",
@@ -94,7 +94,7 @@ const eventData = [
     title: "Kerala Boat Race",
     description:
       "Enjoy the thrilling Kerala boat race featuring snake boats and traditional performances.",
-    image: "https://images.unsplash.com/photo-1621440316150-6c26b3ecb3d3",
+    image: "https://plus.unsplash.com/premium_photo-1685291261001-e0c42bc4217c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2VyYWxhJTIwYm9hdCUyMHJhY2V8ZW58MHx8MHx8fDA%3D",
     price: 0, // Free event
     venue: {
       street: "Backwaters of Kerala",
@@ -107,7 +107,7 @@ const eventData = [
     title: "Christmas Carnival",
     description:
       "Celebrate Christmas with a carnival featuring rides, food stalls, and performances.",
-    image: "https://images.unsplash.com/photo-1607990283657-d658b9d8f978",
+    image: "https://images.unsplash.com/photo-1522448746354-da4936934201?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNocmlzdG1hc3xlbnwwfHwwfHx8MA%3D%3D",
     price: 250,
     venue: {
       street: "Carnival Grounds",
@@ -120,7 +120,7 @@ const eventData = [
     title: "Ganesh Chaturthi Procession",
     description:
       "Witness the grand procession of Lord Ganesh during the most important festival in Maharashtra.",
-    image: "https://images.pexels.com/photos/164185/pexels-photo-164185.jpeg",
+    image: "https://images.unsplash.com/photo-1600238323655-3595cc241793?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z2FuZXNoJTIwY2hhdHVyaGl8ZW58MHx8MHx8fDA%3D",
     price: 0, // Free event
     venue: {
       street: "Ganesh Temple",
