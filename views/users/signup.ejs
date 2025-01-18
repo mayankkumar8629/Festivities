@@ -23,7 +23,7 @@
     <!-- Form Container -->
     <div class="mt-1 margin-left">
       <h2 class="mb-4">Create New Account</h2>
-      <form action="/signup" method="POST">
+      <form action="/signup" method="POST" class="needs-validation" novalidate>
         <div class="form-row">
           <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
@@ -60,8 +60,8 @@
           <label for="contact" class="form-label">Contact Number:</label>
           <input
             type="tel"
-            id="contact"
-            name="contact"
+            id="number"
+            name="number"
             class="form-control"
             required
           />
@@ -86,9 +86,7 @@
             required
           />
         </div>
-        <button type="button" class="btn btn-outline-success">
-          Create New Account
-        </button>
+        <button class="btn btn-outline-success">Create New Account</button>
       </form>
     </div>
   </div>

@@ -4,6 +4,10 @@ const Listing = require("./models/listings.js");
 const path = require("path");
 const ejsMate = require("ejs-mate");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const passport = require("passport");
+const User = require("./models/user.js");
+const LocalStrategy = require("passport-local");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/festivities";
 main()
@@ -20,8 +24,28 @@ async function main() {
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
+
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
+
+const sessionOptions = {
+  secret: "mysuperSecretcode",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 100,
+    httpOnly: true,
+  },
+};
+app.use(session(sessionOptions));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.get("/", (req, res) => {
   res.send("Hello I am root");
@@ -76,6 +100,34 @@ app.get("/login", (req, res) => {
     title: "Login",
   });
 });
+//sigup-post req
+app.post("/signup", async (req, res) => {
+  try {
+    let { name, state, email, number, username, password } = req.body;
+    const newUser = new User({ name, state, email, username, number });
+    const registeredUser = await User.register(newUser, password);
+    req.login(registeredUser, (err) => {
+      if (err) {
+        return next(err);
+      }
+
+      res.redirect("/listings");
+    });
+  } catch (e) {
+    console.error(e);
+    res.redirect("/signup");
+  }
+});
+//user-login
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/listings",
+    failureRedirect: "/login",
+    failureFlash: true,
+  })
+);
+
 //defining the port number
 app.listen(3000, () => {
   console.log("server is listening at port 3000");

@@ -22,37 +22,38 @@
 
     <!-- Form Container -->
     <div class="login-container mt-5">
-        <div class="mt-8">
-            <p class="text-black fs-2 fw-normal font-family-Montserrat m-0 px-3 py-2">
-                YOUR GATEWAY TO CULTURE, CONNECTION &<br />CELEBRATION STARTS HERE!!
-              </p>
-        </div>
-          <div class="mt-7 ms-3">
-           
-            <form action="/signup" method="POST">
-              <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <button type="button" class="btn btn-outline-success">Login</button>
-            </form>
+      <div class="mt-8">
+        <p
+          class="text-black fs-2 fw-normal font-family-Montserrat m-0 px-3 py-2"
+        >
+          YOUR GATEWAY TO CULTURE, CONNECTION &<br />CELEBRATION STARTS HERE!!
+        </p>
+      </div>
+      <div class="mt-7 ms-3">
+        <form action="/login" method="POST" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-control"
+              required
+            />
           </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              required
+            />
+          </div>
+          <button class="btn btn-outline-success">Login</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
