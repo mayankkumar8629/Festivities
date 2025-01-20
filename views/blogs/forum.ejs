@@ -1,0 +1,65 @@
+<% layout("/layouts/boilerplate")%>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Left Side: Blogs -->
+    <div class="col-md-8 border-end" style="overflow-y: auto; height: 100vh">
+      <h1 class="my-4">Latest Blogs</h1>
+      <% for(let blog of allBlogs) { %>
+
+      <!-- Blog 1 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h3 class="card-title"><%=blog.title%></h3>
+          <p class="card-text text-muted">
+            <%=blog.description%>
+            <a href="/blogs/1">Read More</a>
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="me-3"> <i class="fas fa-thumbs-up"></i> Like </span>
+              <span> <i class="fas fa-comment"></i> Comment </span>
+            </div>
+            <small class="text-muted">
+              Posted by <%= blog.user.name %> on <%= new
+              Date(blog.createdAt).toLocaleDateString('en-US', { year:
+              'numeric', month: 'long', day: 'numeric' }) %>
+            </small>
+          </div>
+        </div>
+      </div>
+      <%}%>
+    </div>
+
+    <!-- Right Side: Features or Sidebar -->
+    <div class="col-md-4">
+      <h2 class="my-4">Explore</h2>
+      <div class="list-group mb-4">
+        <a href="/create" class="list-group-item list-group-item-action">
+          <i class="fas fa-pen"></i> Write a Blog
+        </a>
+        <a href="/profile" class="list-group-item list-group-item-action">
+          <i class="fas fa-user"></i> My Profile
+        </a>
+        <a href="/saved" class="list-group-item list-group-item-action">
+          <i class="fas fa-bookmark"></i> Saved Blogs
+        </a>
+      </div>
+      <h3 class="mb-4">Top Authors</h3>
+      <ul class="list-group">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>John Doe</span>
+          <span class="badge bg-primary rounded-pill">25 blogs</span>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Jane Smith</span>
+          <span class="badge bg-primary rounded-pill">15 blogs</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

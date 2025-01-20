@@ -8,6 +8,7 @@ const session = require("express-session");
 const passport = require("passport");
 const User = require("./models/user.js");
 const LocalStrategy = require("passport-local");
+const Blog = require("./models/blog.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/festivities";
 main()
@@ -127,6 +128,38 @@ app.post(
     failureFlash: true,
   })
 );
+//user-logout
+app.get("/logout", (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/login");
+  });
+});
+//blog-forum
+app.get("/blog", async (req, res) => {
+  const allBlogs = await Blog.find({}).populate({
+    path: "user",
+  });
+  res.render("blogs/forum.ejs", {
+    allBlogs,
+    showNavbar: true,
+    title: "Forum",
+  });
+});
+app.get("/newblog", (req, res) => {
+  res.render("blogs/newforum.ejs", {
+    showNavbar: true,
+    title: "NewForum",
+  });
+});
+app.post("/blog", async (req, res) => {
+  const newBlog = new Blog(req.body.blog);
+  newBlog.user = req.user._id;
+  await newBlog.save();
+  res.redirect("/blog");
+});
 
 //defining the port number
 app.listen(3000, () => {
