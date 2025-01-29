@@ -9,6 +9,8 @@ const passport = require("passport");
 const User = require("./models/user.js");
 const LocalStrategy = require("passport-local");
 const Blog = require("./models/blog.js");
+const { timeStamp } = require("console");
+const Comments = require("./models/comment.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/festivities";
 main()
@@ -160,7 +162,34 @@ app.post("/blog", async (req, res) => {
   await newBlog.save();
   res.redirect("/blog");
 });
+//comment-blog
+app.get("/blog/:id", async (req, res) => {
+  const { id } = req.params;
+  const allBlogs = await Blog.find({});
+  const idBlog = await Blog.findById(id).populate('comments').exec();
+  console.log(idBlog.title);
+  res.render("blogs/comment.ejs", {
+    idBlog,
+    allBlogs,
+    showNavbar: true,
+    title: "Comments",
+  });
 
+});
+app.post("/blog/:id/comment", async (req, res) => {
+  let blog = await Blog.findById(req.params.id);
+  const comment = req.body.comments;
+  const user = req.user._id;
+  const newComment = new Comments({
+    author: user,
+    content: comment,
+  });
+
+  blog.comments.push(newComment);
+  await newComment.save();
+  await blog.save();
+  res.redirect(`/blog/${blog._id}`);
+});
 //defining the port number
 app.listen(3000, () => {
   console.log("server is listening at port 3000");

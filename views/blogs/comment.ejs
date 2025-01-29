@@ -18,8 +18,8 @@
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <span class="me-3"> <i class="fas fa-thumbs-up"></i> Like </span>
-              <span>
-                <a href="/blog/<%=blog._id%>">
+              <span
+                ><a href="/blog/<%=blog._id%>">
                   <i class="fas fa-comment"></i>
                 </a>
                 Comment
@@ -38,33 +38,41 @@
 
     <!-- Right Side: Features or Sidebar -->
     <div class="col-md-4">
-      <h2 class="my-4">Explore</h2>
-      <div class="list-group mb-4">
-        <a href="/newblog" class="list-group-item list-group-item-action">
-          <i class="fas fa-pen"></i> Write a Blog
-        </a>
-        <a href="/profile" class="list-group-item list-group-item-action">
-          <i class="fas fa-user"></i> My Profile
-        </a>
-        <a href="/saved" class="list-group-item list-group-item-action">
-          <i class="fas fa-bookmark"></i> Saved Blogs
-        </a>
+      <div class="container my-5">
+        <!-- Form Section -->
+        <div class="row mb-4">
+          <div class="col-10">
+            <form action="/blog/<%=idBlog._id%>/comment" method="POST">
+              <div class="mb-3">
+                <input
+                  name="comments"
+                  placeholder="enter comment"
+                  type="comments"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-2">
+                <button class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div id="comments" class="row g-3">
+          <!-- Example Comment Card -->
+          <div class="col-12">
+            <div class="card bg-light border-0 shadow-sm">
+              <% idBlog.comments.forEach(comment => { %>
+              <div class="card-body">
+                <h6 class="card-title text-primary"><%=comment.author%></h6>
+                <p class="card-text"><%=comment.content%></p>
+              </div>
+              <% })%>
+            </div>
+          </div>
+        </div>
       </div>
-      <h3 class="mb-4">Top Authors</h3>
-      <ul class="list-group">
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          <span>John Doe</span>
-          <span class="badge bg-primary rounded-pill">25 blogs</span>
-        </li>
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          <span>Jane Smith</span>
-          <span class="badge bg-primary rounded-pill">15 blogs</span>
-        </li>
-      </ul>
     </div>
   </div>
 </div>
